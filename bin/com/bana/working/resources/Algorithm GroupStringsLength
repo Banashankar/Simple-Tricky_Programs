@@ -1,0 +1,58 @@
+##Algorithm to group a list of strings by their length using stream
+-------------------------------------------------------------------
+Create a Stream: Create a stream from the input list of strings.
+
+Group by Length: Group the strings based on their length using the Collectors.groupingBy method. The String::length method is used to extract the length of each string.
+
+Return the Result: Return the resulting map containing the grouped strings.
+
+##Algorithm to group a list of strings by their length
+--------------------------------------------------------
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class GroupByLength {
+
+    public static Map<Integer, List<String>> groupByLength(List<String> listStrs) {
+        Map<Integer, List<String>> groupedByLength = new HashMap<>();
+
+        for (String str : listStrs) {
+            int length = str.length();
+            List<String> group;
+
+            // Check if a list for this length already exists
+            if (!groupedByLength.containsKey(length)) {
+                group = new ArrayList<>();
+                groupedByLength.put(length, group);
+            } else {
+                group = groupedByLength.get(length);
+            }
+
+            // Add the current string to the appropriate list
+            group.add(str);
+        }
+
+        return groupedByLength;
+    }
+
+    public static void main(String[] args) {
+        List<String> listStrs = Arrays.asList("apple", "oranges", "pineapple", "guava", "fig", "custurdApple", "date", "cherry");
+        Map<Integer, List<String>> groupedByLength = groupByLength(listStrs);
+        System.out.println(groupedByLength);
+    }
+}
+
+Initialize a Map: Create an empty HashMap to store the grouped strings. The key will be the string length, and the value will be a list of strings with that length.
+Iterate Over Strings:
+
+For each string in the input list:
+
+Get the length of the string.
+
+If a list for this length doesn't exist in the map, create a new empty list and add it to the map with the length as the key.
+
+Add the current string to the list corresponding to its length.
+
+Return the Map: Return the map containing the grouped strings.
