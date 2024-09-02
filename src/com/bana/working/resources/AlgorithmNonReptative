@@ -1,0 +1,14 @@
+#Algorithm for non repitative character in string :set
+------------------------------------------------------
+We create a Set called uniqueChars.
+As we iterate through the string, we check whether each character (ignoring non-letter characters) is already in the set.
+If not, we print it and add it to the set.
+
+#Algorithm without:set
+----------------------
+1.Initialize an empty string to store the unique characters.
+2.Iterate through each character in the input string.
+3.For each character, check whether it already exists in the unique characters string.
+4.If not, add it to the unique characters string.
+5.We manually check whether a character exists in the uniqueChars string using our custom containsChar() function.
+6.If not found, we add it to the uniqueChars string.
