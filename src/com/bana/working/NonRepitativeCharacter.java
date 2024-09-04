@@ -36,12 +36,12 @@ public class NonRepitativeCharacter {
 			if(Character.isLetter(c)) {
 				char letter = Character.toLowerCase(c);
 				if(!unique.contains(letter)) {
-					System.out.println(c +"");
+					//System.out.println(c +"");
 					unique.add(letter);
 				}
 			}
 		}
-		//System.out.println("Unique characters: " + unique);
+		System.out.println("Unique characters: " + unique);
 
 	}
 

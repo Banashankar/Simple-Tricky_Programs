@@ -1,0 +1,42 @@
+#Iterations for AddWithout + and -
+-------------------------------------
+2^0 = 1; 
+2^1 = 2; 
+2^2 = 4;
+2^3 = 8;
+2^4 = 16;
+2^5 = 32;
+2^6 = 64;
+2^7 = 128;
+-----------------------------------------------
+hexa decimal:
+--------------
+1 = 0001
+2 = 0010
+3 = 0011
+4 = 0100
+5 = 0101
+6 = 0110
+7 = 0111
+8 = 1000
+9 = 1001
+10 = A = 1010
+11 = B = 1011
+12 = C = 1100
+13 = D = 1101
+14 = E = 1110
+15 = F = 1111
+--------------------
+AND = both are same then true(1) or else false(0)
+XOR = both are not same then false(0) and same then true(1)
+left shit add 0 to after shifting
+
+1st iteration:
+a = 5 = 0101
+b = 7 = 0111
+-----------------
+a ^ b = 0010 = sum = 2
+
+(a&b)= 0101 = for left shift 
+
+

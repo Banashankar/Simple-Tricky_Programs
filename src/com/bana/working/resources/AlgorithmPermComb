@@ -1,0 +1,25 @@
+#Algorithm for permutation and combination
+--------------------------------------------
+generateCombinations Method: This method initializes the recursive process by calling the overloaded method with an empty current string.
+Recursive Method: The generateCombinations method is called recursively:
+Base Case: If remaining is empty, it prints the current combination.
+Recursive Case: It makes two recursive calls:
+Include the first character: Adds the first character of remaining to current and calls the method with the rest of the string.
+Exclude the first character: Calls the method with the rest of the string without adding the first character to current.
+
+Initial call: generateCombinations("abc", "")
+First recursive call: generateCombinations("bc", "a")
+Second recursive call: generateCombinations("c", "ab")
+Third recursive call: generateCombinations("", "abc") (prints “abc”)
+Backtrack and call: generateCombinations("", "ab") (prints “ab”)
+Continue this process to generate all combinations.
+
+printPermutations Method: This method generates permutations recursively:
+Base Case: If str is empty, it prints the permutation stored in ans.
+Recursive Case: It iterates through each character in str, removes the character, and appends it to ans. Then it calls itself with the remaining string.
+Example Walkthrough:
+
+Initial call: printPermutations("abc", "")
+First iteration: ch = 'a', ros = "bc", printPermutations("bc", "a")
+Second iteration: ch = 'b', ros = "ac", printPermutations("ac", "b")
+Continue this process to generate all permutations.
