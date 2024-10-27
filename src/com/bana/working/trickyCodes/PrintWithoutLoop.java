@@ -12,7 +12,8 @@ public class PrintWithoutLoop {
 
 	private static void printNumbers(int n) {
 		if(n<=100) {
-			System.out.println(n);
+			//System.out.println(n);
+			System.out.printf("%d\t\n", n);
 			printNumbers(n+1);
 		}
 		
