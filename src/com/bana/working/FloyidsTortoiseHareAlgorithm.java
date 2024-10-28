@@ -91,6 +91,7 @@ public class FloyidsTortoiseHareAlgorithm {
 		System.out.println("middel node found for odd:" + myLinkedList.findMiddleNode().value);
 		
 		myLinkedList.append(6);
+		System.out.println("List for even: \n");
 		myLinkedList.printList();
 		System.out.println("middle node found for even:" + myLinkedList.findMiddleNode().value);
 
