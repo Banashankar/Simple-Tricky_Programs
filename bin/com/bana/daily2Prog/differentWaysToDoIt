@@ -1,0 +1,34 @@
+boolean[] seen = new boolean[n * n + 1]; // Assuming values are in the range [0, n*n]
+for (int i = 0; i < n; i++) {
+    int value1 = matrix[i][i];
+    if (!seen[value1]) {
+        sum += value1;
+        seen[value1] = true;
+    }
+
+    int value2 = matrix[i][n - 1 - i];
+    if (!seen[value2]) {
+        sum += value2;
+        seen[value2] = true;
+    }
+}
+return sum;
+----------------------
+int[] values = new int[2 * n];
+int index = 0;
+for (int i = 0; i < n; i++) {
+    values[index++] = matrix[i][i];
+    values[index++] = matrix[i][n - 1 - i];
+}
+
+Arrays.sort(values);
+
+int sum = 0;
+int prev = Integer.MIN_VALUE;
+for (int value : values) {
+    if (value != prev) {
+        sum += value;
+    }
+    prev = value;
+}
+return sum;
