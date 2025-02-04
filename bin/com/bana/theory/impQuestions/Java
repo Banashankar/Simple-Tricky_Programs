@@ -1,0 +1,33 @@
+----------------------
+Volatile VS Transient
+----------------------
+
+Volatile : Volatile is used in MultiThreading to make sure all threads see the latest value of a variable. It prevents threads from using their own cached copies.
+		
+		Real time Example: Imagine a stock price tracker app where multiple threads are fetching and updating the latest stock price.
+							To make sure all threads see the real-time update of price, we use the volatile keyword.
+							
+				volatile double stockPrice = 100.0;
+				
+				//Thread 1: Updates stock price
+				new Thread(() ->{ 
+					stockPrice = 105.5;
+					System.out.println("Stock price updated to:" + stockPrice);
+					}).start();
+					
+				//Thread 2: Reads stock price
+				new Thread(() -> {
+					System.out.println("Latest stock price:" + stockPrice);
+					}).start();
+
+Transient: Transient is a keyword used in serialization. It tells Java to skip this variable when saving an object to a file or transferring it over network.
+
+		Real time Example: Think of a bank account object with an account number and a temporary OTP. 
+							When saving the account to a file, you don't want the OTP to be stored.
+							
+							When you serialize the object, the account number is saved, but the OTP is ignored, ensuring
+							sensitive or temporary data isn't stored.
+							
+							Class BankAccount implements Serializable{
+								String accountNumber;
+								transient int otp; // OTP will be not be saved during serialization.

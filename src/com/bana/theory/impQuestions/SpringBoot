@@ -1,0 +1,18 @@
+--Key Differences between Spring and Spring boot----
+1) Purpose : Spring used to build web App's.
+			Spring boot used to build REST API's.
+			
+2)Key Functionality: Spring, the most essential feature is Dependency injection(DI).
+					Spring boot,the prime feature is AutoConfiguration.
+
+3)Use Case: Spring, Loosely coupled applications.
+			Spring boot StandAlone applications.
+			
+4)Servers: Spring, Explicit configuration of server is needed.
+			Spring boot, Pre-install servers like Tomcat and Jetty.
+			
+5)XML Configuration: Spring, Required.
+					Spring boot, Not Required.
+					
+6)DataBase: Spring, No support for in memory database.
+			Spring boot, Support for in memory database like H2.
